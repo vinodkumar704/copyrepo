@@ -45,7 +45,7 @@ jobs:
           git --version
           git remote -v
           git remote rm copyrepo
-          git remote add copyrepo https://github.com/vinodkumar704/copyrepo
+          #git remote add copyrepo https://github.com/vinodkumar704/copyrepo
           git remote -v  # Check if 'copyrepo' is listed
           git status
           git add .
