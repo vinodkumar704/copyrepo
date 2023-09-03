@@ -51,7 +51,7 @@ jobs:
           git add .
           git commit -m "Move files from folder1 to folder2" 
           git remote add copyrepo https://github.com/vinodkumar704/copyrepo
-          git push copyrepo
+          git push https://USERNAME:${{ secrets.QAAUTH }}@github.com/vinodkumar704/copyrepo HEAD:qa
           GIT_TRACE=1 git push copyrepo
         env:
           GITHUB_TOKEN: ${{ secrets.QAAUTH }}
