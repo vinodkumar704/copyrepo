@@ -42,8 +42,10 @@ jobs:
 
       - name: Commit and Push
         run: |
+          git --version
           git remote -v
           git remote set-url copyrepo https://github.com/vinodkumar704/copyrepo
+          git remote remove copyrepo
           git remote add copyrepo https://github.com/vinodkumar704/copyrepo
           git status
           git add .
