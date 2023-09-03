@@ -27,7 +27,7 @@ jobs:
           git config --global user.name "DineshChekuru"
 
       - name: Pull Latest Changes
-        run: git pull origin feature2
+        run: git pull origin qa
 
           
       - name: Commit and Push
@@ -35,6 +35,6 @@ jobs:
           git status
           git commit -am "Move files from folder1 to folder2" || echo "No changes to commit"
           git remote set-url origin "https://$GH_PAT@github.com/DineshChekuru/testcommit_change.git"
-          git push origin feature2
+          git push origin qa
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
