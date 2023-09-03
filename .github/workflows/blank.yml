@@ -45,5 +45,5 @@ jobs:
           git status
           git add .
           git commit -m "Move files from folder1 to folder2" 
-          git push qa
+          git push copyrepo
         
