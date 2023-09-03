@@ -30,12 +30,20 @@ jobs:
         run: git pull origin qa
 
           
+      # - name: Commit and Push
+      #   run: |
+      #     git status
+      #     git add .
+      #     git commit -am "Move files from folder1 to folder2" || echo "No changes to commit"
+      #     git remote set-url origin "https://$GH_PAT@github.com/vinodkumar704/copyrepo.git"
+      #     git push origin qa
+      #   env:
+      #     GH_PAT: ${{ secrets.GH_PAT }}
+
       - name: Commit and Push
         run: |
           git status
           git add .
-          git commit -am "Move files from folder1 to folder2" || echo "No changes to commit"
-          git remote set-url origin "https://$GH_PAT@github.com/vinodkumar704/copyrepo.git"
-          git push origin qa
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          git commit -m "Move files from folder1 to folder2" 
+          git push qa
+        
