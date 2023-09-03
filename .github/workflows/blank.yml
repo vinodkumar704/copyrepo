@@ -50,8 +50,8 @@ jobs:
           git status
           git add .
           git commit -m "Move files from folder1 to folder2" 
-          git remote add newrepo https://github.com/vinodkumar704/newrepo
-          git push newrepo
+          #git remote add newrepo https://github.com/vinodkumar704/newrepo
+          git push copyrepo
 
       
         
