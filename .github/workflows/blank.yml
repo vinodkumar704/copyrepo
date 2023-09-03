@@ -42,6 +42,7 @@ jobs:
 
       - name: Commit and Push
         run: |
+          git remote -v
           git status
           git add .
           git commit -m "Move files from folder1 to folder2" 
