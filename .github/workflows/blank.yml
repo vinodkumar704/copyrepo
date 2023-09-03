@@ -40,12 +40,21 @@ jobs:
       #   env:
       #     GH_PAT: ${{ secrets.GH_PAT }}
 
+      # - name: Commit and Push
+      #   run: |
+      #     git remote -v
+      #     git remote set-url copyrepo "https://github.com/vinodkumar704/copyrepo"
+      #     git status
+      #     git add .
+      #     git commit -m "Move files from folder1 to folder2" 
+      #     git push copyrepo
+
       - name: Commit and Push
         run: |
-          git remote -v
-          git remote set-url copyrepo "https://github.com/vinodkumar704/copyrepo"
+          git remote add copyrepo https://github.com/vinodkumar704/copyrepo
           git status
           git add .
           git commit -m "Move files from folder1 to folder2" 
           git push copyrepo
+        
         
