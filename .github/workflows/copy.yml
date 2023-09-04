@@ -1,0 +1,42 @@
+name: Copy File
+
+on:
+  push:
+    branches:
+      - qa  # Adjust the branch as needed
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Copy File
+        run: |
+          # Replace source_folder and destination_folder with your folder names
+          cp source_folder/file_to_copy destination_folder/
+        working-directory: path/to/repo  # Specify the path to your repository
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "Your Name"
+          git add destination_folder/file_to_copy
+          git commit -m "Copy file from source_folder to destination_folder"
+          git push
+
+
+
+
+
+
+copy_file:
+  script:
+    - cp source_folder/file_to_copy destination_folder/
+  only:
+    - main  # Adjust the branch as needed
+  artifacts:
+    paths:
+      - destination_folder/
